@@ -11,6 +11,9 @@ const info = async(owner, name) => {
     return recinfo
 }
 
+router.route('/').get((req, res) => {
+    res.send(req.params)
+})
 
 router.route('/:repoowner/:reponame').get( async (req, res) => {
     console.log("Hit endpoint!")

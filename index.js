@@ -9,9 +9,14 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+console.log("Here!")
+
 // Necessary specifications for functioning
 app.use(cors());
 app.use(express.json());
+
+const repoRouter = require('./routes/repositories');
+app.use('/api/repos', repoRouter)
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
     app.use(express.static('frontend/build'));
@@ -20,10 +25,9 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging')
     });
   }
 
-const repoRouter = require('./routes/repositories');
-app.use('/api/repos', repoRouter)
+
 
 // Start app
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
