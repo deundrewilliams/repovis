@@ -3,7 +3,6 @@
 # dependencies
 frontend/node_modules
 node_modules
-frontend/build
 
 /.pnp
 .pnp.js
