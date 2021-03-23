@@ -15,6 +15,21 @@ function getCookie(cname) {
 
 class Blob extends React.Component {
 
+    constructor() {
+        super()
+
+        this.state = {
+            stars: 0
+        }
+
+        this.setStars = this.setStars.bind(this)
+        this.fetchRepo = this.fetchRepo.bind(this)
+    }
+
+    setStars(numStars) {
+        this.setState({ stars: numStars})
+    }
+
 
     fetchRepo() {
         axios.defaults.xsrfCookieName = 'csrftoken';
@@ -22,19 +37,24 @@ class Blob extends React.Component {
 
         axios({
             method: 'get',
-            url: `/api/repos/ucfopen/canvasapi`,
+            url: `/api/repos/ucfopen/vast`,
             headers: {"X-CSRFToken": getCookie('csrftoken')}
         })
-        .then((res) => console.log(res))
+        .then(function(res) {
+            return res
+        })
+        .then((res) => this.setStars(res.data.stargazers_count))
         .catch((err) => console.log(err))
 
     }
 
     render() {
-        this.fetchRepo()
+
         return (
             <div>
                 Hello
+                <button onClick={this.fetchRepo}>Click Me!</button>
+                Num Stars: {this.state.stars}
             </div>
         )
     }
