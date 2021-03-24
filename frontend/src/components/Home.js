@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import InputForm from './InputForm'
+import SiteBanner from './SiteBanner'
 import RepoInfo from './RepoInfo'
 
 const mock_data = {
@@ -71,7 +72,7 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-                <h1>Repovis</h1>
+                <SiteBanner />
                 <InputForm
                     handleSearch={this.fetchRepo}
                 />

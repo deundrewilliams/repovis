@@ -1,0 +1,13 @@
+.site-banner {
+    background-color: #333333;
+    font-family: 'Salsa', sans-serif;
+    font-size: 58px;
+    padding: 10px;
+    color: white;
+    box-shadow: 5px 5px;
+
+    position: fixed;
+    top: 0px;
+
+    width: 100%;
+}
