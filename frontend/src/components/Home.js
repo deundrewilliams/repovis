@@ -4,6 +4,18 @@ import axios from 'axios'
 import InputForm from './InputForm'
 import RepoInfo from './RepoInfo'
 
+const mock_data = {
+    forks: 18293,
+    name: 'create-react-app',
+    description: 'Insert description here',
+    stargazers_count: 67412,
+    open_issues: 1203,
+    owner: {
+        login: 'facebook',
+        avatar_url: 'https://avatars.githubusercontent.com/u/69631?s=200&v=4'
+    }
+}
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -37,20 +49,22 @@ class Home extends React.Component {
 
     fetchRepo(repo_owner, repo_name) {
 
-        axios.defaults.xsrfCookieName = 'csrftoken';
+        this.setRepoInfo(mock_data)
+
+        // axios.defaults.xsrfCookieName = 'csrftoken';
 
 
-        axios({
-            method: 'get',
-            url: `/api/repos/${repo_owner}/${repo_name}`,
-            headers: {"X-CSRFToken": getCookie('csrftoken')}
-        })
-        .then(function(res) {
-            console.log(res.data)
-            return res
-        })
-        .then((res) => this.setRepoInfo(res.data))
-        .catch((err) => console.log(err))
+        // axios({
+        //     method: 'get',
+        //     url: `/api/repos/${repo_owner}/${repo_name}`,
+        //     headers: {"X-CSRFToken": getCookie('csrftoken')}
+        // })
+        // .then(function(res) {
+        //     console.log(res.data)
+        //     return res
+        // })
+        // .then((res) => this.setRepoInfo(res.data))
+        // .catch((err) => console.log(err))
 
     }
 
