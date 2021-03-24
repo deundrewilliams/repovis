@@ -14,8 +14,8 @@ function RepoInfo(props) {
         return(
             <div className="repo-info">
                 <RepoName name={name} />
-                <RepoOwner owner={login} picture={avatar_url} />
                 <RepoDescription description={description} />
+                <RepoOwner owner={login} picture={avatar_url} />
                 <RepoStats forks={forks} stars={stargazers_count} issues={open_issues}/>
             </div>
         )

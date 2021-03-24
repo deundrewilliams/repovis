@@ -7,7 +7,7 @@ function RepoStats(props) {
     const { forks, stars, issues } = props;
 
     return(
-        <div className="repo-owner">
+        <div className="repo-stats">
             <Forks fork_count={forks} />
             <Stars star_count={stars} />
             <Issues issue_count={issues} />

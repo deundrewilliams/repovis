@@ -1,11 +1,13 @@
+import '../css/RepoOwner.css'
+
 function RepoOwner(props) {
 
     const { owner, picture } = props;
 
     return(
         <div className="repo-owner">
-            Owner: {owner}
-            <img src={picture} alt="avatar profile"/>
+            Owner: {owner}<br></br>
+            <img id="owner-pic" src={picture} alt="avatar profile"/>
         </div>
     )
 

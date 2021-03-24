@@ -10,7 +10,7 @@ import '../css/Home.css'
 const mock_data = {
     forks: 18293,
     name: 'create-react-app',
-    description: 'Insert description here',
+    description: 'Set up a modern web app by running one command. ',
     stargazers_count: 67412,
     open_issues: 1203,
     owner: {
