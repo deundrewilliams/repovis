@@ -26,3 +26,5 @@ yarn-error.log*
 /backend/.env
 
 steps.md
+
+*.txt

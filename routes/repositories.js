@@ -2,8 +2,19 @@ const router = require('express').Router();
 const axios = require('axios')
 
 const githubinfo = async(owner, name) => {
-    const info = await axios.get(`https://api.github.com/repos/${owner}/${name}`)
-    return info
+    const maininfo = await axios.get(`https://api.github.com/repos/${owner}/${name}`)
+
+    // const langinfo = await axios.get(`https://api.github.com/repos/${owner}/${name}/languages`)
+
+    // const contribinfo = await axios.get(`https://api.github.com/repos/${owner}/${name}/contributors`)
+
+    // let info = {}
+
+    // info['main'] = maininfo
+    // info['languages'] = langinfo
+    // info['contributors'] = contribinfo
+
+    return maininfo
 }
 
 const info = async(owner, name) => {

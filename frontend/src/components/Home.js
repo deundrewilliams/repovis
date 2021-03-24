@@ -1,5 +1,8 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
+
+import InputForm from './InputForm'
+import RepoInfo from './RepoInfo'
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -13,49 +16,52 @@ function getCookie(cname) {
     return "";
 }
 
-class Blob extends React.Component {
+class Home extends React.Component {
 
     constructor() {
         super()
 
         this.state = {
-            stars: 0
+            repoData: undefined
         }
 
-        this.setStars = this.setStars.bind(this)
-        this.fetchRepo = this.fetchRepo.bind(this)
+        this.fetchRepo = this.fetchRepo.bind(this);
+        this.setRepoInfo = this.setRepoInfo.bind(this);
+
     }
 
-    setStars(numStars) {
-        this.setState({ stars: numStars})
+    setRepoInfo(data) {
+        this.setState({repoData: data})
     }
 
 
-    fetchRepo() {
+    fetchRepo(repo_owner, repo_name) {
+
         axios.defaults.xsrfCookieName = 'csrftoken';
 
 
         axios({
             method: 'get',
-            url: `/api/repos/facebook/create-react-app`,
+            url: `/api/repos/${repo_owner}/${repo_name}`,
             headers: {"X-CSRFToken": getCookie('csrftoken')}
         })
         .then(function(res) {
             console.log(res.data)
             return res
         })
-        .then((res) => this.setStars(res.data.stargazers_count))
+        .then((res) => this.setRepoInfo(res.data))
         .catch((err) => console.log(err))
 
     }
 
     render() {
-
-        return (
+        return(
             <div>
-                Hello
-                <button onClick={this.fetchRepo}>Click Me!</button>
-                Num Stars: {this.state.stars}
+                <h1>Repovis</h1>
+                <InputForm
+                    handleSearch={this.fetchRepo}
+                />
+                <RepoInfo info={this.state.repoData}/>
             </div>
         )
     }
@@ -63,4 +69,4 @@ class Blob extends React.Component {
 
 }
 
-export default Blob;
+export default Home;

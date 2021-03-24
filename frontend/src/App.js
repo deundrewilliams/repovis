@@ -1,13 +1,13 @@
 
 import './App.css';
 
-import Blob from './Blob'
+import Home from './components/Home'
 
 function App() {
-  return (
-    <div className="App">
-      <Blob />
-    </div>
+    return (
+        <div className="App">
+            <Home />
+        </div>
   );
 }
 
