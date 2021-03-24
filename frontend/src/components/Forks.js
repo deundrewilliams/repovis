@@ -4,7 +4,8 @@ function Forks(props) {
 
     return(
         <div className="forks">
-            Forks: {fork_count}
+            <img src="https://img.icons8.com/ios/100/000000/code-fork.png" alt="fork icon"/>
+            <p>{fork_count} forks</p>
         </div>
     )
 

@@ -1,0 +1,12 @@
+.repo-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.repo-info > div {
+    margin: 35px;
+}

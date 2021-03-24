@@ -4,7 +4,8 @@ function Stars(props) {
 
     return(
         <div className="stars">
-            Stars: {star_count}
+            <img src="https://img.icons8.com/ios/100/000000/star--v1.png" alt="star icon"/>
+            <p>{star_count} stars</p>
         </div>
     )
 

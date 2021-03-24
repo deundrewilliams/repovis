@@ -6,7 +6,7 @@ function RepoDescription(props) {
 
     return(
         <div className="repo-description">
-            {description}
+            "{description}"
         </div>
     )
 
