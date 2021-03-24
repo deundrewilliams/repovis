@@ -1,0 +1,60 @@
+.input-form {
+
+    background-color: #c4c4c4;
+
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+
+    padding: 20px;
+
+    width: 75%;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-around;
+
+}
+
+/* owner field */
+#owner-field {
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    width: 250px;
+    margin: 0 10px;
+}
+
+/* name field */
+#name-field {
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    width: 250px;
+    margin: 0 10px;
+}
+
+/* search button */
+#repo-submit {
+    border: none;
+    background-color: #4d7efc;
+    border-radius: 25px;
+    font-size: 25px;
+
+    font-family: 'Rubik', sans-serif;
+
+    margin: 0 10px;
+
+    padding: 0 15px;
+}
+
+#repo-submit:hover {
+    cursor: pointer;
+    filter: brightness(85%)
+}
+
+/* all p elements in form */
+.input-form p {
+    display: inline-block;
+}

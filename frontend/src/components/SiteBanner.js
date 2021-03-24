@@ -2,7 +2,7 @@ import '../css/SiteBanner.css'
 
 function SiteBanner() {
     return(
-        <section class="site-banner">
+        <section className="site-banner">
             RepoVis
         </section>
     )

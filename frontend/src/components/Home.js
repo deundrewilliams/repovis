@@ -1,9 +1,11 @@
 import React from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 
 import InputForm from './InputForm'
 import SiteBanner from './SiteBanner'
 import RepoInfo from './RepoInfo'
+
+import '../css/Home.css'
 
 const mock_data = {
     forks: 18293,
@@ -17,17 +19,17 @@ const mock_data = {
     }
 }
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-       var c = ca[i];
-       while (c.charAt(0)===' ') c = c.substring(1);
-       if(c.indexOf(name) === 0)
-          return c.substring(name.length,c.length);
-    }
-    return "";
-}
+// function getCookie(cname) {
+//     var name = cname + "=";
+//     var ca = document.cookie.split(';');
+//     for(var i=0; i<ca.length; i++) {
+//        var c = ca[i];
+//        while (c.charAt(0)===' ') c = c.substring(1);
+//        if(c.indexOf(name) === 0)
+//           return c.substring(name.length,c.length);
+//     }
+//     return "";
+// }
 
 class Home extends React.Component {
 
@@ -71,12 +73,15 @@ class Home extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="home">
                 <SiteBanner />
-                <InputForm
-                    handleSearch={this.fetchRepo}
-                />
-                <RepoInfo info={this.state.repoData}/>
+                <section className="site-content">
+                    <InputForm
+                        handleSearch={this.fetchRepo}
+                    />
+                    <RepoInfo info={this.state.repoData}/>
+                </section>
+
             </div>
         )
     }

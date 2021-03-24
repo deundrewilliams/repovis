@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../css/InputForm.css'
+
 class InputForm extends React.Component {
 
     constructor(props) {
@@ -11,8 +13,8 @@ class InputForm extends React.Component {
     handleSearch(e) {
         e.preventDefault()
 
-        let owner = document.getElementById('owner').value
-        let name = document.getElementById('name').value
+        let owner = document.getElementById('owner-field').value
+        let name = document.getElementById('name-field').value
 
         this.props.handleSearch(owner, name)
     }
@@ -22,10 +24,10 @@ class InputForm extends React.Component {
         return(
             <div className="input-form">
                 <form id="repo-form" onSubmit={this.handleSearch}>
-                    github.com/
-                    <input type="text" id="owner" name="owner" placeholder="repo owner"></input>
-                    /
-                    <input type="text" id="name" name="name" placeholder="repo name"></input>
+                    <p>github.com/</p>
+                    <input type="text" id="owner-field" name="owner" placeholder="repo owner"></input>
+                    <p>/</p>
+                    <input type="text" id="name-field" name="name" placeholder="repo name"></input>
                     <input type="submit" value="Search" id="repo-submit"></input>
                 </form>
 

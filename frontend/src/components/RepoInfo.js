@@ -12,7 +12,7 @@ function RepoInfo(props) {
         const { forks, name, description, stargazers_count, open_issues, owner: {login, avatar_url} } = info;
 
         return(
-            <div>
+            <div className="repo-info">
                 <RepoName name={name} />
                 <RepoOwner owner={login} picture={avatar_url} />
                 <RepoDescription description={description} />
